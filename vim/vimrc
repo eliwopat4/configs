@@ -1,0 +1,105 @@
+" My vim config file
+
+" Load plugins first using vim-plugin
+call plug#begin('~/.vim/plugged')
+
+" Add cool colorschemes
+Plug 'flazz/vim-colorschemes'
+
+" NERD Commenter
+Plug 'scrooloose/nerdcommenter'
+
+" Surround
+Plug 'tpope/vim-surround'
+
+" NerdTree 
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+" vim-fugitive
+Plug 'tpope/vim-fugitive'
+
+" vim-gitgutter
+Plug 'airblade/vim-gitgutter/'
+
+" prettier
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
+" Auto pair
+Plug 'jiangmiao/auto-pairs'
+
+" Lightline
+Plug 'itchyny/lightline.vim'
+
+" fuzzy search
+Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
+
+" recursive search in curreent directory
+Plug 'BurntSushi/ripgrep'
+
+" install coc.nvim and ale plugin
+
+call plug#end()
+" After adding new plugins run `:PlugInstall`
+
+filetype plugin indent on
+syntax on
+set shell=/bin/zsh
+set guifont=Menlo:h14
+set nocompatible
+set modelines=0
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set encoding=utf-8
+set scrolloff=3
+set autoindent
+set showmode
+set showcmd
+set hidden
+set wildmenu
+set wildmode=list:longest
+set visualbell
+set ttyfast
+set ruler
+set backspace=indent,eol,start
+set laststatus=2
+set number
+set noundofile
+set ignorecase
+set smartcase
+set gdefault
+set incsearch
+set showmatch
+set wrap
+set linebreak
+set nolist
+set formatoptions=qrn1
+set nobackup
+set noswapfile
+set history=100
+set background=dark
+colorscheme gruvbox
+
+inoremap jk <ESC>
+inoremap JK <ESC>
+let mapleader = " "
+nnoremap <leader>nn :NERDTreeToggle<CR>
+nnoremap <silent><C-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
+nnoremap <silent><C-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
+nnoremap <silent><leader>j :set paste<CR>m`o<Esc>``:set nopaste<CR>
+nnoremap <silent><leader>k :set paste<CR>m`O<Esc>``:set nopaste<CR>
+
+" config auto pairs bidings
+let g:AutoPairsShortcutToggle = '<C-p>'
+let g:AutoPairsShortcutFastWrap = '<C-e>'
+let g:AutoPairsShortcutJump = '<C-n>'
+let g:AutoPairsShortcutBackInsert = '<C-b>'
+
+" set color in vim
+if !has('gui_running')
+  set t_Co=256
+endif
+
+
+
