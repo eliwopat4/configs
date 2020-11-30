@@ -53,7 +53,7 @@ let g:ale_fixers = {
       \}
 let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 1
-let g:ale_javascript_prettier_options = '--single-quote --trailing-comma all'
+let g:ale_javascript_prettier_options = '--trailing-comma all'
 nmap <silent> <C-e> <Plug>(ale_next_wrap)
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
@@ -168,6 +168,7 @@ set noswapfile
 set history=100
 set updatetime=300
 set shortmess+=c
+set textwidth=70
 " auto-formate pasted data
 noremap p p=`]<C-o>
 nnoremap P P=`]<C-o>
@@ -185,6 +186,7 @@ nnoremap <silent><leader>k :set paste<CR>m`O<Esc>``:set nopaste<CR>
 nnoremap <silent><leader>.. :bn<CR> 
 nnoremap <silent><leader>,, :bp<CR> 
 nnoremap <silent><leader>bb :ls<CR>:b<Space>
+vnoremap <silent><leader>c :w !pbcopy<CR>
 
 
 " ================== custom mappings for fzf adn ripgrep ==================
